@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miang Hamburguesas | Auténtico Sabor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-hamburger"></i>
+                Miang<span>Burgers</span>
+            </a>
+
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="scrollToSection('inicio')">Inicio</a></li>
+                    <li><a href="#" onclick="scrollToSection('menu')">Menú</a></li>
+                    <li><a href="#" onclick="scrollToSection('sucursales')">Sucursales</a></li>
+                    <li><a href="#" onclick="scrollToSection('nosotros')">Nosotros</a></li>
+                    <li><a href="#" onclick="scrollToSection('contacto')">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <div class="favorites" id="favorites-btn">
+                    <i class="fas fa-heart"></i>
+                    <span class="favorites-count">0</span>
+                </div>
+                <div class="cart-icon" id="cart-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <button class="btn btn-primary" onclick="scrollToSection('menu')">
+                    <i class="fas fa-utensils"></i> Ordenar Ahora
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>DESCUBRE EL AUTÉNTICO SABOR MIANG</h1>
+            <p>Donde cada hamburguesa es una experiencia única. Ingredientes 100% frescos, preparación artesanal y ese
+                toque secreto que te hará volver por más.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="scrollToSection('menu')">Ver Menú Completo</button>
+                <button class="btn btn-outline" onclick="openWhatsApp()">Pedir Express</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container stats-container">
+            <div class="stat-item">
+                <div class="stat-number">10K+</div>
+                <div class="stat-text">Clientes Felices</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">50+</div>
+                <div class="stat-text">Tipos de Hamburguesas</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">5★</div>
+                <div class="stat-text">Calificación</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <div class="section-title">
+                <h2>NUESTRO MENÚ</h2>
+                <p>Los favoritos de nuestros clientes</p>
+            </div>
+
+            <!-- Navegación de Categorías -->
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterMenu('todos')">
+                    <i class="fas fa-star"></i> Lo Más Recomendado
+                </button>
+                <button class="category-btn" onclick="filterMenu('hamburguesas')">
+                    <i class="fas fa-hamburger"></i> Hamburguesas
+                </button>
+                <button class="category-btn" onclick="filterMenu('desayunos')">
+                    <i class="fas fa-egg"></i> Desayunos
+                </button>
+                <button class="category-btn" onclick="filterMenu('combos')">
+                    <i class="fas fa-box"></i> Combos
+                </button>
+                <button class="category-btn" onclick="filterMenu('acompanamientos')">
+                    <i class="fas fa-utensils"></i> Acompañamientos
+                </button>
+                <button class="category-btn" onclick="filterMenu('bebidas')">
+                    <i class="fas fa-glass-whiskey"></i> Bebidas
+                </button>
+                <button class="category-btn" onclick="filterMenu('postres')">
+                    <i class="fas fa-ice-cream"></i> Postres
+                </button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid" id="products-grid">
+                <!-- Los productos se cargan con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Sucursales Section -->
+    <section class="branches" id="sucursales">
+        <div class="container">
+            <div class="section-title">
+                <h2>NUESTRAS SUCURSALES</h2>
+                <p>Encuentra el Miang más cercano a ti</p>
+            </div>
+            <div class="branches-grid">
+                <div class="branch-card">
+                    <h3>Miang Centro</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Principal #123</p>
+                    <p><i class="fas fa-phone"></i> 525613294301</p>
+                    <p><i class="fas fa-clock"></i> 8:00 AM - 11:00 PM</p>
+                    <button class="btn btn-outline" onclick="openMap('Centro')">Ver en Mapa</button>
+                </div>
+                <div class="branch-card">
+                    <h3>Miang Plaza</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Plaza Comercial #456</p>
+                    <p><i class="fas fa-phone"></i> 525613294301</p>
+                    <p><i class="fas fa-clock"></i> 9:00 AM - 10:00 PM</p>
+                    <button class="btn btn-outline" onclick="openMap('Plaza')">Ver en Mapa</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>La historia detrás del auténtico sabor Miang</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Desde 2010, Miang Burgers ha sido el destino preferido para los amantes de las hamburguesas
+                        artesanales. Todo comenzó como un pequeño local familiar con una receta secreta que ha pasado de
+                        generación en generación.</p>
+                    <p>Hoy mantenemos esa misma pasión y dedicación, usando solo ingredientes 100% frescos y preparando
+                        cada hamburguesa con el mismo amor que nos caracteriza.</p>
+                </div>
+                <div class="about-values">
+                    <div class="value-item">
+                        <i class="fas fa-heart"></i>
+                        <h4>Pasión</h4>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-award"></i>
+                        <h4>Calidad</h4>
+                    </div>
+                    <div class="value-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Familia</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>CONTÁCTANOS</h2>
+                <p>Estamos aquí para servirte</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <h4>Teléfono</h4>
+                        <p>525613294301</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email</h4>
+                        <p>anryjoset52@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <h4>WhatsApp</h4>
+                        <p>525613294301</p>
+                        <button class="btn btn-primary" onclick="openWhatsApp()">
+                            <i class="fab fa-whatsapp"></i> Escribir
+                        </button>
+                    </div>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <input type="text" placeholder="Nombre Completo" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="tel" placeholder="Teléfono">
+                    <textarea placeholder="Mensaje" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Miang Burgers</h3>
+            <p>Donde cada hamburguesa es una experiencia única.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <a href="#" onclick="scrollToSection('menu')">Menú</a>
+            <a href="#" onclick="scrollToSection('sucursales')">Sucursales</a>
+            <a href="#" onclick="scrollToSection('contacto')">Contacto</a>
+        </div>
+        <div class="footer-section">
+            <h3>Horarios</h3>
+            <p>Lunes a Domingo</p>
+            <p>8:00 AM - 11:00 PM</p>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#" onclick="openInstagram()">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#" onclick="openFacebook()">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact-item">
+        <i class="fab fa-instagram"></i>
+        <h4>Instagram</h4>
+        <p>@d3rek.vega00</p>
+        <button class="btn btn-outline" onclick="openInstagram()">
+            <i class="fab fa-instagram"></i> Seguir
+        </button>
+    </div>
+
+    <div class="contact-item">
+        <i class="fab fa-facebook"></i>
+        <h4>Facebook</h4>
+        <p>Miang Burgers</p>
+        <button class="btn btn-outline" onclick="openFacebook()">
+            <i class="fab fa-facebook"></i> Seguir
+        </button>
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3>Tu Pedido</h3>
+            <button class="close-cart" onclick="closeCart()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Los items del carrito se cargan aquí -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total">$0</span>
+            </div>
+            <button class="btn btn-primary checkout-btn" onclick="checkout()">
+                Finalizar Pedido
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+
+</html>
